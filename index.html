@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda telefônica com compromissos</title>
+  <!-- Liga o arquivo de estilos (CSS) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Agenda telefônica com compromissos</h1>
+  </header>
+
+  <main>
+    <!-- ===== PARTE A: CONTATOS ===== -->
+    <section aria-labelledby="t-contatos">
+      <h2 id="t-contatos">Contatos</h2>
+
+      <label for="c-nome">Nome *</label>
+      <input id="c-nome" type="text">
+
+      <label for="c-tel">Telefone *</label>
+      <input id="c-tel" type="tel" placeholder="(85) 99999-9999">
+
+      <label for="c-email">E-mail (opcional)</label>
+      <input id="c-email" type="email">
+
+      <button id="c-salvar">Salvar contato</button>
+      <button id="c-cancelar" class="sec" hidden>Cancelar edição</button>
+
+      <div id="c-msg" class="msg" role="status"></div>
+      <ul id="c-lista"></ul>
+    </section>
+
+    <!-- ===== PARTE B: COMPROMISSOS ===== -->
+    <section aria-labelledby="t-comp">
+      <h2 id="t-comp">Compromissos</h2>
+
+      <label for="p-titulo">Título *</label>
+      <input id="p-titulo" type="text">
+
+      <label for="p-data">Data *</label>
+      <input id="p-data" type="date">
+
+      <label for="p-hora">Horário *</label>
+      <input id="p-hora" type="time">
+
+      <label for="p-contato">Contato vinculado (opcional)</label>
+      <select id="p-contato"></select>
+
+      <button id="p-salvar">Salvar compromisso</button>
+      <button id="p-cancelar" class="sec" hidden>Cancelar edição</button>
+
+      <div id="p-msg" class="msg" role="status"></div>
+      <ul id="p-lista"></ul>
+    </section>
+  </main>
+
+  <!-- Liga o arquivo de lógica (JavaScript), no final da página -->
+  <script src="script.js"></script>
+</body>
+</html>

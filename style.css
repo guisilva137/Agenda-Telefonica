@@ -1,0 +1,102 @@
+/* ===== Cores padrão: branco e laranja ===== */
+:root {
+  --laranja: #e8680c;        /* laranja principal */
+  --laranja-escuro: #c4560a; /* laranja ao passar o mouse */
+  --laranja-claro: #fff1e5;  /* fundo suave */
+  --branco: #ffffff;
+  --texto: #2b2118;
+  --suave: #7a6a5c;
+  --borda: #f2cfae;
+  --erro: #b3261e;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--laranja-claro);
+  color: var(--texto);
+}
+
+/* Cabeçalho laranja com texto branco */
+header {
+  background: var(--laranja);
+  color: var(--branco);
+  padding: 18px 24px;
+}
+header h1 { margin: 0; font-size: 1.4rem; }
+
+/* Duas colunas: contatos e compromissos */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 760px) {
+  main { grid-template-columns: 1fr; } /* celular: uma coluna */
+}
+
+/* Cartões brancos */
+section {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-top: 4px solid var(--laranja);
+  border-radius: 8px;
+  padding: 18px;
+}
+h2 { margin-top: 0; font-size: 1.15rem; color: var(--laranja-escuro); }
+
+label { display: block; margin: 10px 0 3px; font-size: .9rem; color: var(--suave); }
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  font: inherit;
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  background: var(--branco);
+}
+input:focus, select:focus, button:focus-visible {
+  outline: 2px solid var(--laranja);
+  outline-offset: 1px;
+}
+
+/* Botões */
+button {
+  font: inherit;
+  padding: 8px 14px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--laranja);
+  color: var(--branco);
+  cursor: pointer;
+}
+button:hover { background: var(--laranja-escuro); }
+button.sec { background: var(--laranja-claro); color: var(--laranja-escuro); border: 1px solid var(--borda); }
+button.sec:hover { background: var(--borda); }
+button.perigo { background: var(--branco); color: var(--erro); border: 1px solid var(--erro); }
+button.perigo:hover { background: var(--erro); color: var(--branco); }
+button.mini { padding: 4px 10px; margin: 0 0 0 4px; font-size: .85rem; }
+
+/* Mensagens */
+.msg { min-height: 1.2em; margin-top: 10px; font-size: .9rem; }
+.erro { color: var(--erro); }
+.ok { color: var(--laranja-escuro); }
+
+/* Listas */
+ul { list-style: none; padding: 0; margin: 14px 0 0; }
+li {
+  border-top: 1px solid var(--borda);
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+li small { display: block; color: var(--suave); margin-top: 2px; }
+.vazio { color: var(--suave); font-style: italic; }
